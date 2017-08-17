@@ -11,28 +11,47 @@
 |
 */
 use App\User;
+use Faker\Factory as Faker;
 
 Route::get('/create', function () {
     /*return view('welcome');*/
     /*return 'Archivo de home';*/
+
+    $faker = Faker::create();
+
     $user = User::create([
-    	'name' => 'Danny Vasquez',
-    	'email' => 'dani22_vr@hotmail.com',
+    	'name' => $faker->name,
+    	'email' => $faker->email,
     	'password' => bcrypt('1234'),
-    	'gender' => 'M',
-    	'biography' => 'Curso eloquen basico'
+    	'gender' => $faker->randomElement(['F', 'M']),
+    	'biography' => $faker->text(200)
     ]);
 
-    return 'Usuario guardado';
+    return $user;
 });
 
-Route::get('/update', function () {
-    $user = User::find(1);
+Route::get('/read/{id}', function ($id) {
+	$user = User::find($id);
 
+	return $user;
+});
+
+Route::get('/update/{id}', function ($id) {
+    $faker = Faker::create();
+    $user = User::find($id);
+
+    $user->name = $faker->name;
     $user->gender = 'M';
-    $user->biography = 'Curso eloquent basico';
+    $user->biography = 'Usuario editado';
 
     $user->save();
 
-    return 'Usuario actualizado';
+    return $user;
+});
+
+Route::get('/delete/{id}', function ($id) {
+	$user = User::find($id);
+	$user->delete();
+
+	return 'Usuario eliminado';
 });
