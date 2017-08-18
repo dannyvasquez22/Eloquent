@@ -10,12 +10,13 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-use App\User;
+
+/*use App\User;
 use Faker\Factory as Faker;
 
 Route::get('/create', function () {
-    /*return view('welcome');*/
-    /*return 'Archivo de home';*/
+    #return view('welcome');
+    #return 'Archivo de home';
 
     $faker = Faker::create();
 
@@ -54,4 +55,9 @@ Route::get('/delete/{id}', function ($id) {
 	$user->delete();
 
 	return 'Usuario eliminado';
-});
+});*/
+
+Route::get('/', [
+    'as' => 'home',
+    'uses' => 'PagesController@home'
+]);
