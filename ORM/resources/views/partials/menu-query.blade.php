@@ -22,5 +22,8 @@
         <li>
             <a href="{{ route('first-last') }}"> Lista de usuarios FIRST - LAST </a>
         </li>
+        <li>
+            <a href="{{ route('paginate') }}"> Lista de usuarios PAGINATE </a>
+        </li>
     </ul>
 </li>
