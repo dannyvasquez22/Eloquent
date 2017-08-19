@@ -37,8 +37,15 @@ class QueryController extends Controller
     }
 
     public function eloquentLists() {
-    	$users = User::orderBy('name', 'ASC')
+        $users = User::orderBy('name', 'ASC')
             ->lists('name', 'id');
-    	return view('query.lists', compact('users'));
+        return view('query.lists', compact('users'));
+    }
+
+    public function eloquentFirstLast() {
+    	$first = User::first();
+        $all = User::all();
+        $last = $all->last();
+    	return view('query.first-last', compact('first', 'last'));
     }
 }
