@@ -31,8 +31,14 @@ class QueryController extends Controller
     }
 
     public function eloquentDelete($id) {
-    	$user = User::find($id);
+        $user = User::find($id);
         $user->delete();
-    	return view('pages.delete');
+        return view('pages.delete');
+    }
+
+    public function eloquentLists() {
+    	$users = User::orderBy('name', 'ASC')
+            ->lists('name', 'id');
+    	return view('query.lists', compact('users'));
     }
 }

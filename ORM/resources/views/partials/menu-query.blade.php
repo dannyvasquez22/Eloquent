@@ -16,5 +16,8 @@
         <li>
             <a href="{{ route('get-custom') }}"> Lista de usuarios (GET-ARRAY) </a>
         </li>
+        <li>
+            <a href="{{ route('lists') }}"> Lista de usuarios para Select (LISTS) </a>
+        </li>
     </ul>
 </li>
