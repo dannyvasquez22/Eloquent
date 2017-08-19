@@ -28,11 +28,14 @@
                             <li>
                                 <a href="{{ route('all') }}"> Todos los usuarios (ALL) </a>
                             </li>
+                            <li>
+                                <a href="{{ route('get', 'F') }}"> Lista de usuarios (Femenina) (GET) </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('get', 'M') }}"> Lista de usuarios (Masculina) (GET) </a>
+                            </li>
                         </ul>
                     </li>
-                    {{-- <li><a href="#">B</a></li>
-                    <li><a href="#">C</a></li>
-                    <li><a href="#">D</a></li> --}}
                 </ul>
             </div>
         </nav>
