@@ -5,5 +5,13 @@
 	<td>{{ $user->email }}</td>
 	<td>{{ $user->gender }}</td>
 	<td>{{ $user->biography }}</td>
+	<td>
+		{!! Form::open(['route' => ['delete', $user->id], 'method' => 'delete']) !!}
+		{{-- <a href="{{ route('delete', $user->id) }}">Eliminar</a> --}}
+		<button type="submit" title="Eliminar">
+			<i class="glyphicon glyphicon-trash"></i>
+		</button>
+		{!! Form::close() !!}
+	</td>
 </tr>
 @endforeach

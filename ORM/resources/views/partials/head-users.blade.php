@@ -1,0 +1,10 @@
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>Nombre</th>
+		<th>Email</th>
+		<th>Genero</th>
+		<th>Bibiografia</th>
+		<th>&nbsp;</th>
+	</tr>
+</thead>
